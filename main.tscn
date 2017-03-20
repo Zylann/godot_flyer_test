@@ -1,0 +1,372 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://terrain_thing.obj" type="Mesh" id=1]
+[ext_resource path="res://flyer.gd" type="Script" id=2]
+[ext_resource path="res://wasp_t9_merge.obj" type="Mesh" id=3]
+[ext_resource path="res://visual_roll.gd" type="Script" id=4]
+[ext_resource path="res://camera.gd" type="Script" id=5]
+[ext_resource path="res://mouse_capture.gd" type="Script" id=6]
+[ext_resource path="res://hud_balance.gd" type="Script" id=7]
+[ext_resource path="res://hud_balance.png" type="Texture" id=8]
+[ext_resource path="res://plane.obj" type="Mesh" id=9]
+
+[sub_resource type="FixedSpatialMaterial" id=1]
+
+flags_transparent = false
+flags_unshaded = false
+flags_on_top = false
+flags_use_point_size = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+albedo_color = Color( 0.625, 0.475998, 0.317383, 1 )
+specular_mode = 0
+specular_color = Color( 0.1, 0.1, 0.1, 1 )
+specular_metalness = 0.0
+specular_roughness = 0.0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+height_enabled = false
+subsurf_scatter_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector2( 1, 1 )
+uv1_offset = Vector2( 0, 0 )
+uv2_scale = Vector2( 1, 1 )
+uv2_offset = Vector2( 0, 0 )
+
+[sub_resource type="FixedSpatialMaterial" id=2]
+
+flags_transparent = false
+flags_unshaded = false
+flags_on_top = false
+flags_use_point_size = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+albedo_color = Color( 0.320251, 0.3462, 0.515625, 1 )
+specular_mode = 0
+specular_color = Color( 0.1, 0.1, 0.1, 1 )
+specular_metalness = 0.42
+specular_roughness = 0.0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+height_enabled = false
+subsurf_scatter_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector2( 1, 1 )
+uv1_offset = Vector2( 0, 0 )
+uv2_scale = Vector2( 1, 1 )
+uv2_offset = Vector2( 0, 0 )
+
+[sub_resource type="Environment" id=3]
+
+background_mode = 0
+background_skybox_scale = 1.0
+background_color = Color( 0.0195313, 0.0195313, 0.0195313, 1 )
+background_energy = 1.0
+background_canvas_max_layer = 0
+ambient_light_color = Color( 0.0585938, 0.0585938, 0.0585938, 1 )
+ambient_light_energy = 1.0
+ambient_light_skybox_contribution = 0.0
+ss_reflections_enabled = true
+ss_reflections_max_steps = 100
+ss_reflections_accel = 0.05
+ss_reflections_fade = 0.757858
+ss_reflections_depth_tolerance = 0.1
+ss_reflections_accel_smooth = true
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 1.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_blur = false
+dof_blur_far_enabled = true
+dof_blur_far_distance = 200.0
+dof_blur_far_transition = 100.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = false
+glow_levels/1 = false
+glow_levels/2 = false
+glow_levels/3 = true
+glow_levels/4 = false
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.0
+glow_blend_mode = 2
+glow_hdr_treshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = false
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_expoure_enabled = false
+auto_expoure_scale = 0.4
+auto_expoure_min_luma = 0.05
+auto_expoure_max_luma = 8.0
+auto_expoure_speed = 0.5
+adjustment_enabled = false
+adjustment_brightness = 1.0
+adjustment_contrast = 1.0
+adjustment_saturation = 1.0
+
+[sub_resource type="FixedSpatialMaterial" id=4]
+
+flags_transparent = false
+flags_unshaded = false
+flags_on_top = false
+flags_use_point_size = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+albedo_color = Color( 0.322052, 0.476563, 0.476563, 1 )
+specular_mode = 0
+specular_color = Color( 0.1, 0.1, 0.1, 1 )
+specular_metalness = 1.0
+specular_roughness = 0.0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+height_enabled = false
+subsurf_scatter_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector2( 1, 1 )
+uv1_offset = Vector2( 0, 0 )
+uv2_scale = Vector2( 1, 1 )
+uv2_offset = Vector2( 0, 0 )
+
+[node name="Node" type="Node"]
+
+[node name="Terrain" type="MeshInstance" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_as_billboard = false
+use_as_y_billboard = false
+use_depth_scale = false
+visible_in_all_rooms = false
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 1 )
+skeleton = NodePath("..")
+material/0 = SubResource( 1 )
+
+[node name="Spatial" type="Spatial" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7861, 12.9044, 11.9936 )
+script = ExtResource( 2 )
+speed = 60.0
+turn_max_deg = Vector2( 360, 360 )
+turn_damp = 0.05
+stabilizer_speed = 1.0
+
+[node name="Wasp" type="MeshInstance" parent="Spatial"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( -1, 0, -8.74228e-08, -1.9022e-08, 0.976041, 0.217587, 8.53282e-08, 0.217587, -0.976041, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_as_billboard = false
+use_as_y_billboard = false
+use_depth_scale = false
+visible_in_all_rooms = false
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 3 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = SubResource( 2 )
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera" parent="Spatial"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 0.999757, -0.0220242, 0, 0.0220242, 0.999757, 0, 4.61673, 12.4498 )
+projection = 0
+fov = 80.0
+near = 0.1
+far = 500.0
+keep_aspect = 1
+current = false
+cull_mask = 1048575
+environment = null
+h_offset = 10.0
+v_offset = 0.0
+script = ExtResource( 5 )
+shake_amount = 0.1
+
+[node name="MouseCapture" type="Node" parent="Spatial"]
+
+script = ExtResource( 6 )
+capture_mouse = true
+
+[node name="DebugLabel" type="Label" parent="Spatial"]
+
+margin_right = 40.0
+margin_bottom = 14.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="DebugLabel2" type="Label" parent="Spatial"]
+
+margin_top = 17.0
+margin_right = 40.0
+margin_bottom = 31.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="XYZ" type="Node2D" parent="Spatial"]
+
+editor/display_folded = true
+position = Vector2( 58.9691, 539.436 )
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Spatial/XYZ"]
+
+modulate = Color( 0.0627451, 0.0627451, 0.0627451, 0.443333 )
+show_behind_parent = true
+position = Vector2( 0.375201, -0.0916526 )
+scale = Vector2( 0.401127, 0.401127 )
+texture = ExtResource( 8 )
+
+[node name="OmniLight" type="OmniLight" parent="Spatial"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40468, -0.551509 )
+layers = 1
+light_color = Color( 0.878906, 0.738144, 0.840417, 1 )
+light_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_max_distance = 0.0
+editor_only = false
+omni_range = 40.0
+omni_attenuation = 1.86607
+omni_shadow_mode = 0
+omni_shadow_detail = 1
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 0.639841, -0.633732, 0.434726, -0.0544286, 0.526887, 0.848191, -0.766577, -0.566369, 0.302631, -20.9386, 14.7599, 0 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0.355469, 0.355469, 0.355469, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_max_distance = 0.0
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 16.0
+directional_shadow_bias_split_scale = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+environment = SubResource( 3 )
+
+[node name="Water" type="MeshInstance" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 300, 0, 0, 0, 300, 0, 0, 0, 300, 0, 5.62946, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_as_billboard = false
+use_as_y_billboard = false
+use_depth_scale = false
+visible_in_all_rooms = false
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 9 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+
+

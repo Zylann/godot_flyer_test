@@ -1,0 +1,14 @@
+[remap]
+
+importer="obj_mesh"
+type="Mesh"
+path="res://.import/wasp_t9_merge.obj-3de07c12f5da4c579a8e02ef81a3b521.msh"
+
+[params]
+
+generate/tangents=true
+generate/normals=true
+force/flip_faces=false
+force/smooth_shading=true
+force/weld_vertices=true
+force/weld_tolerance=0.0001

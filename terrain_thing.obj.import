@@ -1,0 +1,14 @@
+[remap]
+
+importer="obj_mesh"
+type="Mesh"
+path="res://.import/terrain_thing.obj-1921cc8e7958f2fd18dd26924d77b548.msh"
+
+[params]
+
+generate/tangents=true
+generate/normals=true
+force/flip_faces=false
+force/smooth_shading=true
+force/weld_vertices=true
+force/weld_tolerance=0.0001
