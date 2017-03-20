@@ -5,10 +5,6 @@ const Noise = preload("simplex.gd")
 export var shake_amount = 0.1
 
 
-func _ready():
-	set_process(true)
-
-
 func _process(delta):
 	# Camera shake
 	var k1 = 0.005

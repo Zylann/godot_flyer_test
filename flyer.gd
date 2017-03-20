@@ -15,11 +15,6 @@ var _turn_cmd = Vector2(0,0) # In radians
 var _roll = 0.0
 
 
-func _ready():
-	set_process(true)
-	set_process_input(true)
-
-
 func get_roll():
 	return _roll
 

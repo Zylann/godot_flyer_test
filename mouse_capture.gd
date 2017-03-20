@@ -6,7 +6,6 @@ export var capture_mouse = true
 func _ready():
 	if capture_mouse:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	set_process_input(true)
 
 
 func _input(event):
